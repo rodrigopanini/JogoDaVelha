@@ -18,35 +18,35 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-4 celula">
-                <span onclick="alert('clicou')">+</span>
+                <span onclick="trocarValor(this,0,0)">+</span>
             </div>
             <div class="col-4 celula">
-                <span>+</span>
+                <span onclick="trocarValor(this,0,1)">+</span>
             </div>
             <div class="col-4 celula">
-                <span>+</span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 celula">
-                <span>+</span>
-            </div>
-            <div class="col-4 celula">
-                <span>+</span>
-            </div>
-            <div class="col-4 celula">
-                <span>+</span>
+                <span onclick="trocarValor(this,0,2)">+</span>
             </div>
         </div>
         <div class="row">
             <div class="col-4 celula">
-                <span>+</span>
+                <span onclick="trocarValor(this,1,0)">+</span>
             </div>
             <div class="col-4 celula">
-                <span>+</span>
+                <span onclick="trocarValor(this,1,1)">+</span>
             </div>
             <div class="col-4 celula">
-                <span>+</span>
+                <span onclick="trocarValor(this,1,2)">+</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 celula">
+                <span onclick="trocarValor(this,2,0)">+</span>
+            </div>
+            <div class="col-4 celula">
+                <span onclick="trocarValor(this,2,1)">+</span>
+            </div>
+            <div class="col-4 celula">
+                <span onclick="trocarValor(this,2,2)">+</span>
             </div>
         </div>
     </div>
@@ -58,6 +58,24 @@
         ["", "", ""]
     ];
 
-    console.log(matrizJogo);    
+    var numeroJogador = 1;
+
+    console.log(matrizJogo); 
+    
+    function trocarValor(span, linha, coluna)
+    {
+        if (numeroJogador == 1)
+        {
+            matrizJogo[linha][coluna] = "O";
+            span.innerHTML = "O";
+            numeroJogador = 2;
+        } else {
+            matrizJogo[linha][coluna] = "X";
+            span.innerHTML = "X";
+            numeroJogador = 1;
+        }
+
+        console.log(matrizJogo);
+    }
 </script>    
 </html>
